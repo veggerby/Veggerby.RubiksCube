@@ -33,7 +33,7 @@ namespace Veggerby.RubiksCube.Core.Tests
         public void Should_rotate_direction_RI(int x, int y, int z, int expectedX, int expectedY, int expectedZ)
         {
             // arrange
-            var rotation = Rotation.RightInverse; 
+            var rotation = Rotation.RightInverse;
 
             var position = new Position(x, y, z);
             var expected = new Position(expectedX, expectedY, expectedZ);
@@ -73,7 +73,7 @@ namespace Veggerby.RubiksCube.Core.Tests
         public void Should_rotate_direction_LI(int x, int y, int z, int expectedX, int expectedY, int expectedZ)
         {
             // arrange
-            var rotation = Rotation.LeftInverse; 
+            var rotation = Rotation.LeftInverse;
 
             var position = new Position(x, y, z);
             var expected = new Position(expectedX, expectedY, expectedZ);
@@ -113,7 +113,7 @@ namespace Veggerby.RubiksCube.Core.Tests
         public void Should_rotate_direction_BI(int x, int y, int z, int expectedX, int expectedY, int expectedZ)
         {
             // arrange
-            var rotation = Rotation.BackInverse; 
+            var rotation = Rotation.BackInverse;
 
             var position = new Position(x, y, z);
             var expected = new Position(expectedX, expectedY, expectedZ);
@@ -125,7 +125,7 @@ namespace Veggerby.RubiksCube.Core.Tests
 
             actual.ShouldBe(expected);
         }
-        
+
         [Theory]
         [InlineData(1, 0, 0, 0, 1, 0)]
         [InlineData(0, -1, 1, 1, 0, 1)]
@@ -153,7 +153,7 @@ namespace Veggerby.RubiksCube.Core.Tests
         public void Should_rotate_direction_DI(int x, int y, int z, int expectedX, int expectedY, int expectedZ)
         {
             // arrange
-            var rotation = Rotation.DownInverse; 
+            var rotation = Rotation.DownInverse;
 
             var position = new Position(x, y, z);
             var expected = new Position(expectedX, expectedY, expectedZ);
@@ -186,7 +186,7 @@ namespace Veggerby.RubiksCube.Core.Tests
             actual.ShouldBe(expected);
         }
 
-        
+
         [Theory]
         [InlineData(1, 0, 0, 1, 0, 0)]
         [InlineData(0, -1, 1, 0, 1, 1)]
@@ -214,7 +214,7 @@ namespace Veggerby.RubiksCube.Core.Tests
         public void Should_rotate_direction_FI(int x, int y, int z, int expectedX, int expectedY, int expectedZ)
         {
             // arrange
-            var rotation = Rotation.FrontInverse; 
+            var rotation = Rotation.FrontInverse;
 
             var position = new Position(x, y, z);
             var expected = new Position(expectedX, expectedY, expectedZ);

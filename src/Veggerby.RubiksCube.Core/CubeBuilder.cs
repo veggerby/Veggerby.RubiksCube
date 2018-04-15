@@ -14,42 +14,42 @@ namespace Veggerby.RubiksCube.Core
             var blueBack = new Face(Side.Back, Color.Blue);
 
             // create center pieces
-            var white = new CenterPiece(whiteUp);
-            var yellow = new CenterPiece(yellowDown);
-            var orange = new CenterPiece(orangeLeft);
-            var red = new CenterPiece(redRight);
-            var green = new CenterPiece(greenFront);
-            var blue = new CenterPiece(blueBack);
+            var white = new CenterPiece(0x1, whiteUp);
+            var yellow = new CenterPiece(0x2, yellowDown);
+            var orange = new CenterPiece(0x3, orangeLeft);
+            var red = new CenterPiece(0x4, redRight);
+            var green = new CenterPiece(0x5, greenFront);
+            var blue = new CenterPiece(0x6, blueBack);
 
             // create corner pieces (x/y/z side)
-            var greenOrangeWhite = new CornerPiece(greenFront, orangeLeft, whiteUp);
-            var blueOrangeWhite = new CornerPiece(blueBack, orangeLeft, whiteUp);
-            var greenRedWhite = new CornerPiece(greenFront, redRight, whiteUp);
-            var blueRedWhite = new CornerPiece(blueBack, redRight, whiteUp);
-            var greenOrangeYellow = new CornerPiece(greenFront, orangeLeft, yellowDown);
-            var blueOrangeYellow = new CornerPiece(blueBack, orangeLeft, yellowDown);
-            var greenRedYellow = new CornerPiece(greenFront, redRight, yellowDown);
-            var blueRedYellow = new CornerPiece(blueBack, redRight, yellowDown);
+            var greenOrangeWhite = new CornerPiece(0x10, greenFront, orangeLeft, whiteUp);
+            var blueOrangeWhite = new CornerPiece(0x11, blueBack, orangeLeft, whiteUp);
+            var greenRedWhite = new CornerPiece(0x12, greenFront, redRight, whiteUp);
+            var blueRedWhite = new CornerPiece(0x13, blueBack, redRight, whiteUp);
+            var greenOrangeYellow = new CornerPiece(0x14, greenFront, orangeLeft, yellowDown);
+            var blueOrangeYellow = new CornerPiece(0x15, blueBack, orangeLeft, yellowDown);
+            var greenRedYellow = new CornerPiece(0x16, greenFront, redRight, yellowDown);
+            var blueRedYellow = new CornerPiece(0x17, blueBack, redRight, yellowDown);
 
             // create edge pieces (top layer)
-            var orangeWhite = new EdgePiece(orangeLeft, whiteUp);
-            var greenWhite = new EdgePiece(greenFront, whiteUp);
-            var redWhite = new EdgePiece(redRight, whiteUp);
-            var blueWhite = new EdgePiece(blueBack, whiteUp);
+            var orangeWhite = new EdgePiece(0x20, orangeLeft, whiteUp);
+            var greenWhite = new EdgePiece(0x21, greenFront, whiteUp);
+            var redWhite = new EdgePiece(0x22, redRight, whiteUp);
+            var blueWhite = new EdgePiece(0x23, blueBack, whiteUp);
 
             // create edge pieces (middle layer)
-            var orangeGreen = new EdgePiece(orangeLeft, greenFront);
-            var greenRed = new EdgePiece(greenFront, redRight);
-            var redBlue = new EdgePiece(redRight, blueBack);
-            var blueOrange = new EdgePiece(blueBack, orangeLeft);
+            var orangeGreen = new EdgePiece(0x24, orangeLeft, greenFront);
+            var greenRed = new EdgePiece(0x25, greenFront, redRight);
+            var redBlue = new EdgePiece(0x26, redRight, blueBack);
+            var blueOrange = new EdgePiece(0x27, blueBack, orangeLeft);
 
             // create edge pieces (bottom layer)
-            var orangeYellow = new EdgePiece(orangeLeft, yellowDown);
-            var greenYellow = new EdgePiece(greenFront, yellowDown);
-            var redYellow = new EdgePiece(redRight, yellowDown);
-            var blueYellow = new EdgePiece(blueBack, yellowDown);
+            var orangeYellow = new EdgePiece(0x28, orangeLeft, yellowDown);
+            var greenYellow = new EdgePiece(0x29, greenFront, yellowDown);
+            var redYellow = new EdgePiece(0x2A, redRight, yellowDown);
+            var blueYellow = new EdgePiece(0x2B, blueBack, yellowDown);
 
-            var positions = new List<PiecePosition> 
+            var positions = new List<PiecePosition>
             {
                 // top layer
                 new PiecePosition(new Position(1, -1, 1), greenOrangeWhite),

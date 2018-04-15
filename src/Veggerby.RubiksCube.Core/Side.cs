@@ -6,12 +6,12 @@ namespace Veggerby.RubiksCube.Core
 {
     public class Side
     {
-        public static Direction Up = new Direction(0, 0, 1);
-        public static Direction Down = new Direction(0, 0, -1);
-        public static Direction Left = new Direction(0, -1, 0);
-        public static Direction Right = new Direction(0, 1, 0);
-        public static Direction Front = new Direction(1, 0, 0);
-        public static Direction Back = new Direction(-1, 0, 0);
+        public static Direction Up = new Direction("U", 0, 0, 1);
+        public static Direction Down = new Direction("D", 0, 0, -1);
+        public static Direction Left = new Direction("L", 0, -1, 0);
+        public static Direction Right = new Direction("R", 0, 1, 0);
+        public static Direction Front = new Direction("F", 1, 0, 0);
+        public static Direction Back = new Direction("B", -1, 0, 0);
 
         public Direction Direction { get; }
 

@@ -6,7 +6,7 @@ namespace Veggerby.RubiksCube.Core
 {
     public class CubePrinter
     {
-        private static IDictionary<Color, Tuple<ConsoleColor, ConsoleColor>> _colorMap = new Dictionary<Color, Tuple<ConsoleColor, ConsoleColor>> 
+        private static IDictionary<Color, Tuple<ConsoleColor, ConsoleColor>> _colorMap = new Dictionary<Color, Tuple<ConsoleColor, ConsoleColor>>
         {
             { Color.None, new Tuple<ConsoleColor, ConsoleColor>(ConsoleColor.Black, ConsoleColor.Gray) },
             { Color.White, new Tuple<ConsoleColor, ConsoleColor>(ConsoleColor.White, ConsoleColor.Black) },
@@ -105,41 +105,41 @@ namespace Veggerby.RubiksCube.Core
             Console.SetCursorPosition(x, y+1);
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.Write("|");                
+            Console.Write("|");
             Console.BackgroundColor = bg;
             Console.ForegroundColor = fg;
-            Console.Write("          ");                
+            Console.Write("          ");
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.Write("|");                
+            Console.Write("|");
 
             Console.SetCursorPosition(x, y+2);
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.Write("|");                
+            Console.Write("|");
             Console.BackgroundColor = bg;
             Console.ForegroundColor = fg;
-            Console.Write($" {position.X,2},{position.Y,2},{position.Z,2} ");                
+            Console.Write($" {position.X,2},{position.Y,2},{position.Z,2} ");
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.Write("|");                
+            Console.Write("|");
 
             Console.SetCursorPosition(x, y+3);
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.Write("|");                
+            Console.Write("|");
             Console.BackgroundColor = bg;
             Console.ForegroundColor = fg;
-            Console.Write("          ");                
+            Console.Write("          ");
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.Write("|");                
+            Console.Write("|");
 
             Console.SetCursorPosition(x, y+4);
 
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.Write("+----------+");     
+            Console.Write("+----------+");
 
             Console.SetCursorPosition(left, top);
         }
@@ -155,7 +155,7 @@ namespace Veggerby.RubiksCube.Core
 
             var left = Console.CursorLeft;
             var top = Console.CursorTop;
-            
+
             Console.SetCursorPosition(left, top - max);
 
             foreach(var coord in _coords)

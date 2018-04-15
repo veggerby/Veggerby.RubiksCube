@@ -11,7 +11,7 @@ namespace Veggerby.RubiksCube.Core
             Color = color;
         }
 
-        public override bool Equals(object obj) 
+        public override bool Equals(object obj)
         {
             return Equals(obj as Face);
         }

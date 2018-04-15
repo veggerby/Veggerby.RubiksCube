@@ -13,7 +13,7 @@ namespace Veggerby.RubiksCube
 
             var rotated = cube.Scramble();
 
-            printer.Print(rotated);            
+            printer.Print(rotated);
         }
     }
 }

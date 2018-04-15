@@ -30,7 +30,7 @@ namespace Veggerby.RubiksCube.Core
                 throw new ArgumentException(nameof(positions));
             }
 
-            Positions = positions.ToList();            
+            Positions = positions.ToList();
         }
 
         public PiecePosition GetPiece(Position position)
@@ -57,7 +57,7 @@ namespace Veggerby.RubiksCube.Core
         {
             var cube = this;
 
-            var rotations = new[] 
+            var rotations = new[]
             {
                 Rotation.Back,
                 Rotation.BackInverse,

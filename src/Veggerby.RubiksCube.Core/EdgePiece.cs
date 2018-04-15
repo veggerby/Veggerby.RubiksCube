@@ -5,8 +5,8 @@ namespace Veggerby.RubiksCube.Core
 {
     public class EdgePiece : Piece
     {
-        public EdgePiece(Face face1, Face face2) : base(face1, face2)
+        public EdgePiece(int id, Face face1, Face face2) : base(id, face1, face2)
         {
-        }        
+        }
     }
 }

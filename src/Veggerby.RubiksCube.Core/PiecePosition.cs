@@ -34,14 +34,14 @@ namespace Veggerby.RubiksCube.Core
 
             return face?.Color ?? Color.None;
         }
-        
+
         public PiecePosition Rotate(Rotation rotation)
         {
             var newRotation = rotation.Rotate(_rotation);
             return new PiecePosition(_initialPosition, Piece, newRotation);
         }
 
-        public override bool Equals(object obj) 
+        public override bool Equals(object obj)
         {
             return Equals(obj as PiecePosition);
         }

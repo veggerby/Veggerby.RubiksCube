@@ -6,9 +6,11 @@ namespace Veggerby.RubiksCube.Core
 {
     public abstract class Piece
     {
+        public int Id { get; }
+
         public IEnumerable<Face> Faces { get; }
 
-        protected Piece(params Face[] faces)
+        protected Piece(int id, params Face[] faces)
         {
             if (faces.Distinct().Count() <= 0 || faces.Distinct().Count() > 3)
             {
@@ -30,10 +32,11 @@ namespace Veggerby.RubiksCube.Core
                 throw new ArgumentOutOfRangeException(nameof(faces), "No side can have Green and Blue at the same time");
             }
 
+            Id = id;
             Faces = faces;
         }
 
-        public override bool Equals(object obj) 
+        public override bool Equals(object obj)
         {
             return Equals(obj as Piece);
         }
@@ -45,15 +48,20 @@ namespace Veggerby.RubiksCube.Core
                 return false;
             }
 
-            return Faces.SequenceEqual(other.Faces);
+            return Id.Equals(other.Id) && Faces.SequenceEqual(other.Faces);
         }
 
         public override int GetHashCode()
         {
             unchecked
             {
-                return Faces.Aggregate(Faces.First().GetHashCode(), (seed, face) => (seed * 397) ^ face.GetHashCode());
+                return Faces.Aggregate(Id.GetHashCode(), (seed, face) => (seed * 397) ^ face.GetHashCode());
             }
+        }
+
+        public override string ToString()
+        {
+            return $"#{Id}";
         }
     }
 }

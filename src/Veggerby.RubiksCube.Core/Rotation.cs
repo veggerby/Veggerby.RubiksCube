@@ -52,18 +52,18 @@ namespace Veggerby.RubiksCube.Core
             {  0,  0,  1 }
         };
 
-        public static UnitRotation Right = new UnitRotation(Side.Right, new Matrix(RotateInverseY));
-        public static UnitRotation RightInverse = new UnitRotation(Side.Right, new Matrix(RotateY));
-        public static UnitRotation Left = new UnitRotation(Side.Left, new Matrix(RotateY));
-        public static UnitRotation LeftInverse = new UnitRotation(Side.Left, new Matrix(RotateInverseY));
-        public static UnitRotation Back = new UnitRotation(Side.Back, new Matrix(RotateX));
-        public static UnitRotation BackInverse = new UnitRotation(Side.Back, new Matrix(RotateInverseX));
-        public static UnitRotation Down = new UnitRotation(Side.Down, new Matrix(RotateZ));
-        public static UnitRotation DownInverse = new UnitRotation(Side.Down, new Matrix(RotateInverseZ));
-        public static UnitRotation Front = new UnitRotation(Side.Front, new Matrix(RotateInverseX));
-        public static UnitRotation FrontInverse = new UnitRotation(Side.Front, new Matrix(RotateX));
-        public static UnitRotation Up = new UnitRotation(Side.Up, new Matrix(RotateInverseZ));
-        public static UnitRotation UpInverse = new UnitRotation(Side.Up, new Matrix(RotateZ));
+        public static UnitRotation Right = new UnitRotation("R", Side.Right, new Matrix(RotateInverseY));
+        public static UnitRotation RightInverse = new UnitRotation("RI", Side.Right, new Matrix(RotateY));
+        public static UnitRotation Left = new UnitRotation("L", Side.Left, new Matrix(RotateY));
+        public static UnitRotation LeftInverse = new UnitRotation("LI", Side.Left, new Matrix(RotateInverseY));
+        public static UnitRotation Back = new UnitRotation("B", Side.Back, new Matrix(RotateX));
+        public static UnitRotation BackInverse = new UnitRotation("BI", Side.Back, new Matrix(RotateInverseX));
+        public static UnitRotation Down = new UnitRotation("D", Side.Down, new Matrix(RotateZ));
+        public static UnitRotation DownInverse = new UnitRotation("DI", Side.Down, new Matrix(RotateInverseZ));
+        public static UnitRotation Front = new UnitRotation("F", Side.Front, new Matrix(RotateInverseX));
+        public static UnitRotation FrontInverse = new UnitRotation("FI", Side.Front, new Matrix(RotateX));
+        public static UnitRotation Up = new UnitRotation("U", Side.Up, new Matrix(RotateInverseZ));
+        public static UnitRotation UpInverse = new UnitRotation("UI", Side.Up, new Matrix(RotateZ));
 
         public static Rotation Empty = new Rotation(Matrix.Identity(3));
 
