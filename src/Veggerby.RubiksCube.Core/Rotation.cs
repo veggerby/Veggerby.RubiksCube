@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Veggerby.Algorithm.LinearAlgebra;
 
 namespace Veggerby.RubiksCube.Core
@@ -64,6 +65,22 @@ namespace Veggerby.RubiksCube.Core
         public static UnitRotation FrontInverse = new UnitRotation("FI", Side.Front, new Matrix(RotateX));
         public static UnitRotation Up = new UnitRotation("U", Side.Up, new Matrix(RotateInverseZ));
         public static UnitRotation UpInverse = new UnitRotation("UI", Side.Up, new Matrix(RotateZ));
+
+        internal static IDictionary<string, UnitRotation> AllRotations = new Dictionary<string, UnitRotation>
+        {
+            { Right.Id, Right },
+            { RightInverse.Id, RightInverse },
+            { Left.Id, Left },
+            { LeftInverse.Id, LeftInverse },
+            { Back.Id, Back },
+            { BackInverse.Id, Back },
+            { Down.Id, Down },
+            { DownInverse.Id, DownInverse },
+            { Front.Id, Front },
+            { FrontInverse.Id, FrontInverse },
+            { Up.Id, Up },
+            { UpInverse.Id, UpInverse },
+        };
 
         public static Rotation Empty = new Rotation(Matrix.Identity(3));
 

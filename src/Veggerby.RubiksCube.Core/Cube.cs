@@ -6,7 +6,12 @@ namespace Veggerby.RubiksCube.Core
 {
     public class Cube
     {
+        private readonly IEnumerable<UnitRotation> _rotations = Enumerable.Empty<UnitRotation>();
         public IEnumerable<PiecePosition> Positions { get; }
+
+        public IEnumerable<UnitRotation> Rotations => _rotations;
+
+        public IEnumerable<UnitRotation> Reverse => _rotations.Reverse().Select(x => x.Reverse).ToList();
 
         public Side GetSide(Direction direction)
         {
@@ -33,6 +38,11 @@ namespace Veggerby.RubiksCube.Core
             Positions = positions.ToList();
         }
 
+        private Cube(IEnumerable<PiecePosition> positions, IEnumerable<UnitRotation> rotations) : this(positions)
+        {
+            _rotations = (rotations ?? Enumerable.Empty<UnitRotation>()).ToList();
+        }
+
         public PiecePosition GetPiece(Position position)
         {
             return Positions.SingleOrDefault(x => x.Position.Equals(position));
@@ -44,7 +54,7 @@ namespace Veggerby.RubiksCube.Core
             var pieces = side.Pieces;
             var others = Positions.Except(pieces);
             var rotated = pieces.Select(x => x.Rotate(rotation));
-            return new Cube(rotated.Concat(others));
+            return new Cube(rotated.Concat(others), Rotations.Concat(new [] { rotation }));
         }
 
         public static Cube Initialize()
@@ -56,29 +66,13 @@ namespace Veggerby.RubiksCube.Core
         public Cube Scramble(int iterations = 200)
         {
             var cube = this;
-
-            var rotations = new[]
-            {
-                Rotation.Back,
-                Rotation.BackInverse,
-                Rotation.Down,
-                Rotation.DownInverse,
-                Rotation.Front,
-                Rotation.FrontInverse,
-                Rotation.Left,
-                Rotation.LeftInverse,
-                Rotation.Right,
-                Rotation.RightInverse,
-                Rotation.Up,
-                Rotation.UpInverse,
-            };
-
-            var rnd = new Random();
+            UnitRotation previous = null;
 
             while (iterations > 0)
             {
-                var rotation = rotations[rnd.Next(12)];
+                var rotation = Rotation.AllRotations.Values.Where(x => !x.Reverse.Equals(previous)).ToList().SelectRandom();
                 cube = cube.Rotate(rotation);
+                previous = rotation;
                 iterations--;
             }
 
