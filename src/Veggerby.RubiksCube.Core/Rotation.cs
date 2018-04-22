@@ -73,7 +73,7 @@ namespace Veggerby.RubiksCube.Core
             { Left.Id, Left },
             { LeftInverse.Id, LeftInverse },
             { Back.Id, Back },
-            { BackInverse.Id, Back },
+            { BackInverse.Id, BackInverse },
             { Down.Id, Down },
             { DownInverse.Id, DownInverse },
             { Front.Id, Front },
